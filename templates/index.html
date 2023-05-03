@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>Convert Microsoft Word to MP3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function updateVoiceOptions() {
+            var language = document.getElementById("language").value;
+            var voiceSelect = document.getElementById("voice");
+            voiceSelect.innerHTML = "";
+            var options;
+
+            if (language === "en-US") {
+                options = [
+                    {text: "en-US-JacobNeural", value: "en-US-JacobNeural"},
+                    {text: "en-US-EricNeural", value: "en-US-EricNeural"}
+                ];
+            } else if (language === "zh-CN") {
+                options = [
+                    {text: "zh-CN-XiaoyouNeural", value: "zh-CN-XiaoyouNeural"},
+                    {text: "zh-CN-YunyangNeural", value: "zh-CN-YunyangNeural"}
+                ];
+            }
+
+            for (var i = 0; i < options.length; i++) {
+                var option = document.createElement("option");
+                option.text = options[i].text;
+                option.value = options[i].value;
+                voiceSelect.add(option);
+            }
+        }
+    </script>
+</head>
+<body onload="updateVoiceOptions()">
+    <div class="container">
+        <h1>Convert Microsoft Word to MP3</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="subscription_key">Subscription Key to access Microsoft Cognitive Service API:</label>
+            <input type="text" name="subscription_key" required>
+            <label for="region">Location/Region to access Microsoft Cognitive Service API:</label>
+            <input type="text" name="region" required>
+            <label for="language">Language:</label>
+            <select name="language" id="language" onchange="updateVoiceOptions()">
+                <option value="en-US">en-US</option>
+                <option value="zh-CN">zh-CN</option>
+            </select>
+            <label for="voice">Voice:</label>
+            <select name="voice" id="voice">
+                <!-- Options will be populated by JavaScript -->
+            </select>
+            <label for="file">Choose a .docx file:</label>
+            <input type="file" name="file" accept=".docx" required>
+            <input type="submit" value="Convert">
+        </form>
+    </div>
+</body>
+</html>
