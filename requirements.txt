@@ -1,0 +1,4 @@
+Flask==2.1.1
+python-docx==0.8.11
+azure-cognitiveservices-speech==1.28.0
+requests
