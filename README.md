@@ -32,15 +32,15 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Set your Azure Cognitive Services subscription key and region in the `app.py` file or pass them as form inputs.
-
-2. Start the Flask application:
+1. Start the Flask application:
 
 ```bash
 python app.py
 ```
 
-3. Open your web browser and navigate to `http://localhost:5321` to access the application.
+2. Open your web browser and navigate to `http://localhost:5321` to access the application.
+
+3. Azure subscription key and the Region for the Azure Text-to-Speech service are needed. Follow the instructions at [BobTranslate](https://bobtranslate.com/service/translate/microsoft.html#_2-%E6%B3%A8%E5%86%8C-azure) to obtain an API key.
 
 ## Technologies
 
