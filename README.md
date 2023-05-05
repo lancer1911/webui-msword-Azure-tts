@@ -89,7 +89,7 @@ docker build -t webui-msword-azure-tts .
 Run the Docker container using the following command:
 
 ```bash
-docker run -p 5321:5321 webui-msword-azure-tts
+docker run -d -p 5321:5321 --name webui-msword-azure-tts-container webui-msword-azure-tts
 ```
 
 ### 4. Access the web application
