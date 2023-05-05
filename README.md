@@ -49,6 +49,57 @@ python app.py
 - Azure Cognitive Services Text-to-Speech API
 - HTML, CSS, and JavaScript for frontend
 
+# Docker 
+## https://hub.docker.com/r/lancer1911/webui-msword-azure-tts
+
+This repository contains a Flask-based web application that provides an interface for converting Microsoft Word documents into speech using Azure Cognitive Services Text-to-Speech API. The application is designed to run inside a Docker container, making it easy to deploy and manage.
+
+## Features
+
+- Upload Microsoft Word documents (.docx)
+- Convert the text within the Word document to speech using Azure Cognitive Services Text-to-Speech API
+- Serve the generated audio file for playback or download
+- Input Azure Speech Services API key and region directly through the web interface
+
+## Prerequisites
+
+- Docker installed on your machine
+- An Azure account with an active subscription
+
+## How to use
+
+### 1. Clone the repository
+
+Clone this repository to your local machine using the following command:
+
+```bash
+git clone https://github.com/lancer1911/webui-msword-azure-tts.git
+```
+
+### 2. Build the Docker image
+
+Navigate to the root of the repository and build the Docker image using the following command:
+
+```bash
+docker build -t webui-msword-azure-tts .
+```
+
+### 3. Run the Docker container
+
+Run the Docker container using the following command:
+
+```bash
+docker run -p 5321:5321 webui-msword-azure-tts
+```
+
+### 4. Access the web application
+
+Open a web browser and visit `http://localhost:5321` to access the web application. You will be prompted to enter your Azure Speech Services API key and region through the web interface.
+
+## Support
+
+If you encounter any issues or have questions, please open an issue on the GitHub repository.
+
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
