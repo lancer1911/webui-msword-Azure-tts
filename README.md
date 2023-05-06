@@ -38,6 +38,20 @@ pip install -r requirements.txt
 python app.py
 ```
 
+or, start the application with uWSGI:
+
+Install uWSGI:
+
+```bash
+pip install uwsgi
+```
+
+Run uWSGI:
+
+```bash
+uwsgi --ini uwsgi.ini
+```
+
 2. Open your web browser and navigate to `http://localhost:5321` to access the application.
 
 3. Azure subscription key and the Region for the Azure Text-to-Speech service are needed. Follow the instructions at [BobTranslate](https://bobtranslate.com/service/translate/microsoft.html#_2-%E6%B3%A8%E5%86%8C-azure) to obtain an API key.
@@ -68,6 +82,26 @@ This repository contains a Flask-based web application that provides an interfac
 
 ## How to use
 
+### 1. Pull the Docker image
+
+Pull the Docker image using the following command:
+
+```bash
+docker pull lancer1911/webui-msword-azure-tts
+```
+### 2. Run the Docker container
+
+Run the Docker container using the following command:
+
+```bash
+docker run -d -p 5321:5321 --name webui-msword-azure-tts-container lancer1911/webui-msword-azure-tts
+```
+### 3. Access the web application
+
+Open a web browser and visit `http://<IP address of your server>:5321` to access the web application. You will be prompted to enter your Azure Speech Services API key and region through the web interface.
+
+## Or, build your own Docker
+
 ### 1. Clone the repository
 
 Clone this repository to your local machine using the following command:
@@ -82,6 +116,11 @@ Navigate to the root of the repository and build the Docker image using the foll
 
 ```bash
 docker build -t webui-msword-azure-tts .
+```
+or under MacOS, using the following command (otherwise, it may build for the linux/arm64/v8 platform):
+
+```bash
+docker buildx build --platform linux/amd64 -t webui-msword-azure-tts .
 ```
 
 ### 3. Run the Docker container
