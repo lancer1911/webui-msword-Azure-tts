@@ -15,7 +15,7 @@ This project is a simple web application that converts Microsoft Word (.docx) fi
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/webui-msword-Azure-tts.git
+git clone https://github.com/lancer1911/webui-msword-Azure-tts.git
 ```
 
 2. Change into the project directory:
