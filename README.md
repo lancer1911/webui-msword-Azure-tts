@@ -32,27 +32,27 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Start the Flask application:
+### Start the Flask application
 
 ```bash
 python app.py
 ```
 
-or, start the application with uWSGI:
+### Or, start the application with uWSGI
 
-Install uWSGI:
+1. Install uWSGI:
 
 ```bash
 pip install uwsgi
 ```
 
-Run uWSGI:
+2. Run uWSGI:
 
 ```bash
 uwsgi --ini uwsgi.ini
 ```
 
-2. Open your web browser and navigate to `http://localhost:5321` to access the application.
+Open your web browser and navigate to `http://localhost:5321` to access the application.
 
 3. Azure subscription key and the Region for the Azure Text-to-Speech service are needed. Follow the instructions at [BobTranslate](https://bobtranslate.com/service/translate/microsoft.html#_2-%E6%B3%A8%E5%86%8C-azure) to obtain an API key.
 
@@ -63,8 +63,7 @@ uwsgi --ini uwsgi.ini
 - Azure Cognitive Services Text-to-Speech API
 - HTML, CSS, and JavaScript for frontend
 
-# Docker 
-## https://hub.docker.com/r/lancer1911/webui-msword-azure-tts
+# Docker Version
 
 This repository contains a Flask-based web application that provides an interface for converting Microsoft Word documents into speech using Azure Cognitive Services Text-to-Speech API. The application is designed to run inside a Docker container, making it easy to deploy and manage.
 
@@ -81,6 +80,10 @@ This repository contains a Flask-based web application that provides an interfac
 - An Azure account with an active subscription
 
 ## How to use
+
+### Docker Hub Repository
+
+https://hub.docker.com/r/lancer1911/webui-msword-azure-tts
 
 ### 1. Pull the Docker image
 
@@ -141,4 +144,4 @@ If you encounter any issues or have questions, please open an issue on the GitHu
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License.
