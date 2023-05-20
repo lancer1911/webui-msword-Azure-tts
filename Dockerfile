@@ -4,23 +4,24 @@ FROM python:3.8-slim
 # Set the working directory
 WORKDIR /app
 
-# Install necessary build tools
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends gcc build-essential libssl-dev libffi-dev python3-dev && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-# Copy requirements.txt into the container
+# Copy the requirements.txt file into the container
 COPY requirements.txt .
 
-# Install the required packages
-RUN pip install --no-cache-dir -r requirements.txt
+# Install system packages needed by ffmpeg
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy the application code into the container
+
+# Install the required packages
+RUN pip install --no-cache-dir -r requirements.txt gunicorn
+
+
+# Copy the rest of the application code into the container
 COPY . .
 
-# Expose the port that the app will run on
+# Expose the port the app will run on
 EXPOSE 5321
 
-# Start the application using uWSGI
-CMD ["uwsgi", "--ini", "uwsgi.ini"]
+# Start the application using Gunicorn
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5321", "app:app"]

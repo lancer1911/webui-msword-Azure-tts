@@ -30,6 +30,32 @@ cd webui-msword-Azure-tts
 pip install -r requirements.txt
 ```
 
+4. Install ffmpeg:
+
+- **On Windows:**
+
+    - Download the static build from the [ffmpeg download page](https://ffmpeg.org/download.html).
+    - Unzip the downloaded file and remember the location where you extracted it.
+    - Add the bin folder under the extracted location to your environment variable `Path`.
+    - To test the installation, open a new command prompt and type `ffmpeg -version`. If it was installed properly, it should display the version information.
+
+- **On macOS:**
+    
+    - If you have homebrew installed, you can install ffmpeg using the following command: 
+    ```
+    brew install ffmpeg
+    ```
+
+    - To test the installation, open a terminal and type `ffmpeg -version`. If it was installed properly, it should display the version information.
+
+- **On Linux:**
+    
+    - You can install ffmpeg using the package manager of your distro. For Ubuntu, you can use the following command:
+    ```
+    sudo apt install ffmpeg
+    ```
+    - To test the installation, open a terminal and type `ffmpeg -version`. If it was installed properly, it should display the version information.
+
 ## Usage
 
 ### Start the Flask application
@@ -78,6 +104,7 @@ This repository contains a Flask-based web application that provides an interfac
 
 - Docker installed on your machine
 - An Azure account with an active subscription
+- ffmpeg installed on your machine
 
 ## How to use
 

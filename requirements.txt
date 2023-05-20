@@ -1,5 +1,5 @@
-Flask==2.1.1
+Flask==2.0.1
 python-docx==0.8.11
-requests==2.27.1
-uWSGI==2.0.20
-azure-cognitiveservices-speech
+pydub==0.25.1
+azure-cognitiveservices-speech==1.19.0
+tqdm

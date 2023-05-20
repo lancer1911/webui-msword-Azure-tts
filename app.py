@@ -53,7 +53,8 @@ def delete(filename):
     if os.path.exists(mp3_file_path):
         os.remove(mp3_file_path)
     
-    docx_file_path = os.path.join(uploads_dir, os.path.splitext(filename)[0] + '.docx')
+    docx_filename = os.path.splitext(filename)[0] + '.docx'
+    docx_file_path = os.path.join(uploads_dir, docx_filename)
     if os.path.exists(docx_file_path):
         os.remove(docx_file_path)
 
