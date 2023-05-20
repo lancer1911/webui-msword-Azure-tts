@@ -18,3 +18,4 @@ dist/
 *.dist-info/
 *.whl
 *.test
+*.zip
