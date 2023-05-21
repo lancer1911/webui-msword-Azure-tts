@@ -12,15 +12,58 @@
 
             if (language === "en-US") {
                 options = [
-                    {text: "en-US-JacobNeural", value: "en-US-JacobNeural"},
-                    {text: "en-US-EricNeural", value: "en-US-EricNeural"}
+                    {text: "en-US-AIGenerate1Neural (Male)", value: "en-US-AIGenerate1Neural"},
+                    {text: "en-US-AIGenerate2Neural (Female)", value: "en-US-AIGenerate2Neural"},
+                    {text: "en-US-AmberNeural (Female)", value: "en-US-AmberNeural"},
+                    {text: "en-US-AnaNeural (Female, Child)", value: "en-US-AnaNeural"},
+                    {text: "en-US-AriaNeural (Female)", value: "en-US-AriaNeural"},
+                    {text: "en-US-AshleyNeural (Female)", value: "en-US-AshleyNeural"},
+                    {text: "en-US-BrandonNeural (Male)", value: "en-US-BrandonNeural"},
+                    {text: "en-US-ChristopherNeural (Male)", value: "en-US-ChristopherNeural"},
+                    {text: "en-US-CoraNeural (Female)", value: "en-US-CoraNeural"},
+                    {text: "en-US-DavisNeural (Male)", value: "en-US-DavisNeural"},
+                    {text: "en-US-ElizabethNeural (Female)", value: "en-US-ElizabethNeural"},
+                    {text: "en-US-EricNeural (Male)", value: "en-US-EricNeural"},
+                    {text: "en-US-GuyNeural (Male)", value: "en-US-GuyNeural"},
+                    {text: "en-US-JacobNeural (Male)", value: "en-US-JacobNeural"},
+                    {text: "en-US-JaneNeural (Female)", value: "en-US-JaneNeural"},
+                    {text: "en-US-JasonNeural (Male)", value: "en-US-JasonNeural"},
+                    {text: "en-US-JennyMultilingualNeural (Female)", value: "en-US-JennyMultilingualNeural"},
+                    {text: "en-US-JennyNeural (Female)", value: "en-US-JennyNeural"},
+                    {text: "en-US-MichelleNeural (Female)", value: "en-US-MichelleNeural"},
+                    {text: "en-US-MonicaNeural (Female)", value: "en-US-MonicaNeural"},
+                    {text: "en-US-NancyNeural (Female)", value: "en-US-NancyNeural"},
+                    {text: "en-US-RogerNeural (Male)", value: "en-US-RogerNeural"},
+                    {text: "en-US-SaraNeural (Female)", value: "en-US-SaraNeural"},
+                    {text: "en-US-SteffanNeural (Male)", value: "en-US-SteffanNeural"},
+                    {text: "en-US-TonyNeural (Male)", value: "en-US-TonyNeural"}
                 ];
             } else if (language === "zh-CN") {
                 options = [
-                    {text: "zh-CN-XiaoyouNeural", value: "zh-CN-XiaoyouNeural"},
-                    {text: "zh-CN-YunyangNeural", value: "zh-CN-YunyangNeural"}
+                    {text: "zh-CN-XiaochenNeural (Female)", value: "zh-CN-XiaochenNeural"},
+                    {text: "zh-CN-XiaohanNeural (Female)", value: "zh-CN-XiaohanNeural"},
+                    {text: "zh-CN-XiaomengNeural (Female)", value: "zh-CN-XiaomengNeural"},
+                    {text: "zh-CN-XiaomoNeural (Female)", value: "zh-CN-XiaomoNeural"},
+                    {text: "zh-CN-XiaoqiuNeural (Female)", value: "zh-CN-XiaoqiuNeural"},
+                    {text: "zh-CN-XiaoruiNeural (Female)", value: "zh-CN-XiaoruiNeural"},
+                    {text: "zh-CN-XiaoshuangNeural (Female, Child)", value: "zh-CN-XiaoshuangNeural"},
+                    {text: "zh-CN-XiaoxiaoNeural (Female)", value: "zh-CN-XiaoxiaoNeural"},
+                    {text: "zh-CN-XiaoxuanNeural (Female)", value: "zh-CN-XiaoxuanNeural"},
+                    {text: "zh-CN-XiaoyanNeural (Female)", value: "zh-CN-XiaoyanNeural"},
+                    {text: "zh-CN-XiaoyiNeural (Female)", value: "zh-CN-XiaoyiNeural"},
+                    {text: "zh-CN-XiaoyouNeural (Female, Child)", value: "zh-CN-XiaoyouNeural"},
+                    {text: "zh-CN-XiaozhenNeural (Female)", value: "zh-CN-XiaozhenNeural"},
+                    {text: "zh-CN-YunfengNeural (Male)", value: "zh-CN-YunfengNeural"},
+                    {text: "zh-CN-YunhaoNeural (Male)", value: "zh-CN-YunhaoNeural"},
+                    {text: "zh-CN-YunjianNeural (Male)", value: "zh-CN-YunjianNeural"},
+                    {text: "zh-CN-YunxiaNeural (Male)", value: "zh-CN-YunxiaNeural"},
+                    {text: "zh-CN-YunxiNeural (Male)", value: "zh-CN-YunxiNeural"},
+                    {text: "zh-CN-YunyangNeural (Male)", value: "zh-CN-YunyangNeural"},
+                    {text: "zh-CN-YunyeNeural (Male)", value: "zh-CN-YunyeNeural"},
+                    {text: "zh-CN-YunzeNeural (Male)", value: "zh-CN-YunzeNeural"}
                 ];
             }
+
 
             for (var i = 0; i < options.length; i++) {
                 var option = document.createElement("option");
@@ -39,6 +82,7 @@
             <input type="text" name="subscription_key" required>
             <label for="region">Location/Region to access Microsoft Cognitive Service API:</label>
             <input type="text" name="region" required>
+            <div><span style="color: #FF0E0E;">Note: </span> You may follow the instructions at <a href="https://bobtranslate.com/service/translate/microsoft.html#_2-%E6%B3%A8%E5%86%8C-azure">BobTranslate</a> to obtain an API key.</div>
             <label for="language">Language:</label>
             <select name="language" id="language" onchange="updateVoiceOptions()">
                 <option value="en-US">en-US</option>
@@ -55,3 +99,4 @@
     </div>
 </body>
 </html>
+
