@@ -2,6 +2,8 @@
 
 This project is a simple web application that converts Microsoft Word (.docx) files to MP3 format using Azure Text-to-Speech services.
 
+<img src="./uploads/screenshot.PNG" width="50%">
+
 ## Features
 
 - Upload a Microsoft Word (.docx) file
