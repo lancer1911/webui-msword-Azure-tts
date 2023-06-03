@@ -1,5 +1,9 @@
 Flask==2.0.1
-python-docx==0.8.11
 pydub==0.25.1
 azure-cognitiveservices-speech==1.19.0
 tqdm
+python-docx==0.8.11
+docx2txt==0.8
+pdfminer.six
+pdfminer
+chardet==4.0.0
