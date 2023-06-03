@@ -1,6 +1,6 @@
 # webui-msword-Azure-tts
 
-This project is a simple web application that converts Microsoft Word (.docx) files to MP3 format using Azure Text-to-Speech services.
+This project is a simple web application that converts Microsoft Word (.docx and .doc), .txt and text-based .pdf files to MP3 format using Azure Text-to-Speech services.
 
 <img src="./uploads/screenshot.PNG" width="50%">
 
