@@ -3,6 +3,25 @@
 <head>
     <title>Convert Microsoft Word to MP3</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Add styles for the spinner */
+        .spinner {
+            display: none;
+            width: 50px;
+            height: 50px;
+            margin: 100px auto;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            animation: spin 2s linear infinite;
+        }
+
+        /* Add animation to the spinner */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>    
     <script>
         function updateVoiceOptions() {
             var language = document.getElementById("language").value;
@@ -72,12 +91,16 @@
                 voiceSelect.add(option);
             }
         }
+ 
+        function showSpinner() {
+            document.getElementById('spinner').style.display = 'block';
+        }
     </script>
 </head>
 <body onload="updateVoiceOptions()">
     <div class="container">
         <h1>Convert Microsoft Word to MP3</h1>
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" onsubmit="showProcessing();">
             <label for="subscription_key">Subscription Key to access Microsoft Cognitive Service API:</label>
             <input type="text" name="subscription_key" required>
             <label for="region">Location/Region to access Microsoft Cognitive Service API:</label>
@@ -92,11 +115,26 @@
             <select name="voice" id="voice">
                 <!-- Options will be populated by JavaScript -->
             </select>
-            <label for="file">Choose a .docx file:</label>
-            <input type="file" name="file" accept=".docx" required>
-            <input type="submit" value="Convert">
+            <label for="file">Choose a .docx, .txt, .doc or .pdf file:</label>
+            <input type="file" name="file" accept=".docx,.txt,.doc,.pdf" required>
+            <input type="submit" id="convert_button" value="Convert">
         </form>
+        <p id="processing" style="display: none;">Processing...</p>
+        <div class="spinner" id="spinner"></div>
     </div>
+    <script>
+        /* You can add a script to hide the processing message and spinner when the page loads */
+        document.getElementById('processing').style.display = 'none';
+        document.getElementById('spinner').style.display = 'none';
+
+        function showProcessing() {
+            // Change the button text to "Processing..."
+            document.getElementById('convert_button').value = 'Processing...';
+
+            // Show the spinner
+            document.getElementById('spinner').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
 
